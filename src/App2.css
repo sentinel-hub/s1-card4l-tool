@@ -1,0 +1,275 @@
+:root {
+  --white: #fff;
+  --light-grey: #eff2f4;
+  --black: #112b33;
+  --primary: #b2c22d; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 22px; }
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+input:checked + .slider {
+  background-color: var(--primary); }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary); }
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px); }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px; }
+
+.slider.round::before {
+  border-radius: 50%; }
+
+.editor {
+  background-color: var(--white);
+  margin-bottom: 1rem; }
+  .editor:invalid {
+    border: 1px solid #f74343; }
+
+.CodeMirror {
+  /* stylelint-disable-line */
+  height: 389px !important;
+  font-size: 1rem;
+  width: 100%; }
+  @media (max-width: 106.25em) {
+    .CodeMirror {
+      height: 397px !important; } }
+  @media (max-width: 75em) {
+    .CodeMirror {
+      font-size: 0.75rem; } }
+  @media (max-width: 50em) {
+    .CodeMirror {
+      width: 100%; } }
+
+.console {
+  width: 95%;
+  height: 50px;
+  padding: 0.5rem 1rem; }
+
+.map {
+  width: 60%;
+  height: 647px;
+  z-index: 10 !important; }
+  @media (max-width: 106.25em) {
+    .map {
+      width: 60%; } }
+  @media (max-width: 75em) {
+    .map {
+      width: 100%;
+      height: 390px;
+      margin-bottom: 1.5rem; } }
+
+.map-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: stretch; }
+  @media (max-width: 75em) {
+    .map-container {
+      flex-direction: column; } }
+
+.map-buttons {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+  .map-buttons button {
+    width: fit-content;
+    margin-left: 1rem; }
+  .map-buttons span {
+    margin-top: 1rem;
+    margin-left: 1rem; }
+
+.catalog-info-table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+  width: fit-content;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
+
+.catalog-info-table caption {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0.5rem; }
+
+.catalog-info-table thead tr {
+  background-color: var(--primary);
+  color: #fff;
+  text-align: left;
+  font-weight: bold; }
+
+.catalog-info-table th,
+.catalog-info-table td {
+  padding: 0.7rem 1rem; }
+
+.catalog-info-table tbody tr {
+  border-bottom: 1px solid black; }
+
+.catalog-info-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--primary); }
+
+.responses-container {
+  overflow-y: scroll;
+  max-height: 300px; }
+
+.datepicker {
+  z-index: 100000; }
+
+.datepicker-wrapper {
+  z-index: 1 !important; }
+
+.datepicker-input {
+  font-size: 1.4rem; }
+
+.request-preview-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  cursor: pointer; }
+  .request-preview-overlay--container {
+    cursor: auto;
+    width: 50%;
+    height: 70%;
+    background-color: #fff;
+    padding: 1rem 1rem;
+    position: absolute; }
+    .request-preview-overlay--container > div {
+      height: 100%; }
+  .request-preview-overlay--info {
+    font-size: 1rem; }
+
+.request-preview {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1rem;
+  outline: none; }
+  .request-preview:focus {
+    border: 2px solid var(--primary); }
+  .request-preview--close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    margin-right: 1rem;
+    font-size: 2rem; }
+    .request-preview--close span {
+      cursor: pointer; }
+
+.timerange-input--invalid {
+  border: 2px solid red; }
+  .timerange-input--invalid:focus {
+    outline-color: red; }
+
+.app {
+  padding: 1rem; }
+
+.request-form-first-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 2rem; }
+  .request-form-first-row-first-item {
+    display: flex;
+    width: 22%;
+    flex-direction: column; }
+    @media (max-width: 62.5em) {
+      .request-form-first-row-first-item {
+        width: 100%; } }
+  .request-form-first-row-second-item {
+    display: flex;
+    flex-direction: column;
+    width: 15%; }
+    @media (max-width: 62.5em) {
+      .request-form-first-row-second-item {
+        width: 100%; } }
+  .request-form-first-row-third-item {
+    width: 63%; }
+    @media (max-width: 62.5em) {
+      .request-form-first-row-third-item {
+        width: 100%; } }
+  @media (max-width: 62.5em) {
+    .request-form-first-row {
+      flex-direction: column; } }
+
+.request-form-second-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 2rem; }
+  .request-form-second-row-first-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column; }
+    @media (max-width: 62.5em) {
+      .request-form-second-row-first-item {
+        width: 100%; } }
+  .request-form-second-row-second-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column; }
+    @media (max-width: 62.5em) {
+      .request-form-second-row-second-item {
+        width: 100%; } }
+  @media (max-width: 62.5em) {
+    .request-form-second-row {
+      flex-direction: column; } }
+
+.request-form-third-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%; }
+  .request-form-third-row-first-item {
+    width: 100%; }
+    .request-form-third-row-first-item .form {
+      max-height: 700px; }

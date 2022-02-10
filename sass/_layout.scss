@@ -1,0 +1,89 @@
+.app {
+  padding: 1rem;
+}
+
+.request-form {
+  &-first-row {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &-first-item {
+      display: flex;
+      width: 22%;
+      flex-direction: column;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    &-second-item {
+      display: flex;
+      flex-direction: column;
+      width: 15%;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    &-third-item {
+      width: 63%;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &-second-row {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &-first-item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    &-second-item {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &-third-row {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+
+    &-first-item {
+      width: 100%;
+
+      .form {
+        max-height: 700px;
+      }
+    }
+  }
+}

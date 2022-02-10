@@ -1,0 +1,33 @@
+
+.editor {
+  background-color: var(--white);
+  margin-bottom: 1rem;
+
+  &:invalid {
+    border: 1px solid #f74343;
+  }
+}
+
+.CodeMirror {  /* stylelint-disable-line */
+  height: 389px !important;
+  font-size: 1rem;
+  width: 100%;
+
+  @include respond(big-desktop) {
+    height: 397px !important;
+  }
+
+  @include respond(tab-land) {
+    font-size: 0.75rem;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.console {
+  width: 95%;
+  height: 50px;
+  padding: 0.5rem 1rem;
+}
