@@ -220,7 +220,12 @@ export const generateBatchBodyRequest = (state, isSettingOutput, datatake, dateO
 };
 
 export const getBatchBodyCreateWithDatatake = (state, datatake, uuid, dateOrderString) => {
-  const body = generateBatchBodyRequest(state.s1odc, state.params.isSettingOutput, datatake, dateOrderString);
+  const body = generateBatchBodyRequest(
+    state.s1odc,
+    state.params.isSettingOutput || state.auth.isEdcUser,
+    datatake,
+    dateOrderString,
+  );
   body.processRequest.input.data[0].dataFilter.timeRange.from = datatake.timeRange[0];
   body.processRequest.input.data[0].dataFilter.timeRange.to = datatake.timeRange[1];
   body.processRequest.input.bounds = { geometry: datatake.geometry };

@@ -44,8 +44,8 @@ const BatchExtraOutputOptions = ({ advancedOutputOptions }) => {
         value={advancedOutputOptions.defaultTilePath ?? ''}
         placeholder="Write your tile path. E.g: mybucket/my-target-folder"
       />
-      <div className="flex items-center mb-2 whitespace-normal">
-        <label className="form__label cursor-pointer" htmlFor="adv-create-collection">
+      <div className="flex items-center mb-2 whitespace-normal mt-2">
+        <label className="form__label cursor-pointer mr-2" htmlFor="adv-create-collection">
           Create Collection?
         </label>
         <Toggle
@@ -59,7 +59,7 @@ const BatchExtraOutputOptions = ({ advancedOutputOptions }) => {
       </label>
       <input
         disabled={advancedOutputOptions.createCollection ?? false}
-        className="form__input"
+        className="form__input mb-2"
         id="adv-collection-id"
         onChange={handleCollectionIdChange}
         value={advancedOutputOptions.collectionId ?? ''}

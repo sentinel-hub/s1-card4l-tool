@@ -18,9 +18,10 @@ const BatchOptionsContainer = ({
   isSettingOutput,
   overwrite,
   advancedOptions,
+  isEdcUser,
 }) => {
   const generateBatchOptions = () => {
-    if (!isSettingOutput) {
+    if (!isSettingOutput && !isEdcUser) {
       return (
         <BatchProOptions
           bucketName={bucketName}
@@ -74,6 +75,7 @@ const mapStateToProps = (store) => ({
   isProMode: store.params.isProMode,
   isOnDebugMode: store.params.debugMode,
   isSettingOutput: store.params.isSettingOutput,
+  isEdcUser: store.auth.isEdcUser,
   overwrite: store.s1odc.overwrite,
   advancedOptions: store.s1odc.advancedOptions,
 });
