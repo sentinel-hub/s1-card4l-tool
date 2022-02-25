@@ -1,6 +1,7 @@
 import React from 'react';
 import store, { s1batchSlice } from '../../store';
 import Toggle from '../Toggle/Toggle';
+import Tooltip from '../Tooltip/Tooltip';
 import BatchGridSelection from './BatchGridSelection';
 
 const BatchAdvancedOutputOptions = ({ resolution, tilingGrid, advancedOutputOptions }) => {
@@ -34,9 +35,12 @@ const BatchExtraOutputOptions = ({ advancedOutputOptions }) => {
 
   return (
     <>
-      <label className="form__label" htmlFor="adv-tile-path">
-        Tile Path
-      </label>
+      <div className="flex items-center mt-2">
+        <label className="form__label mr-2" htmlFor="adv-tile-path">
+          Tile Path Prefix
+        </label>
+        <Tooltip content="Editing tile path will only affect the prefix for the used defaultTilePath. To check the full value of the used tile path, please check the field on Show Preview modal, which uses the datatake id as well as it's date." />
+      </div>
       <input
         className="form__input"
         id="adv-tile-path"

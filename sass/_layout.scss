@@ -11,7 +11,7 @@
 
     &-first-item {
       display: flex;
-      width: 22%;
+      width: 17%;
       flex-direction: column;
 
       @include respond(tab-port) {
@@ -22,7 +22,7 @@
     &-second-item {
       display: flex;
       flex-direction: column;
-      width: 15%;
+      width: 25%;
 
       @include respond(tab-port) {
         width: 100%;
@@ -30,7 +30,7 @@
     }
 
     &-third-item {
-      width: 63%;
+      width: 58%;
 
       @include respond(tab-port) {
         width: 100%;

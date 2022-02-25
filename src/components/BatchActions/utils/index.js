@@ -173,13 +173,12 @@ const generateAdvancedOptions = (advancedOptions) => {
 
 export const generateBatchBodyRequest = (state, isSettingOutput, datatake, dateOrderString) => {
   const getDefaultTilePath = () => {
-    if (isSettingOutput === true) {
-      return state.advancedOptions.defaultTilePath;
-    }
-
     const { year, month, day } = getTimeObjectFromDatatake(datatake);
 
     const bucketNameWithPrefix = (() => {
+      if (isSettingOutput === true) {
+        return state.advancedOptions.defaultTilePath;
+      }
       if (state.isUsingTemporalBucket) {
         return `${DEFAULT_TEMPORAL_BUCKET}/${dateOrderString}`;
       }

@@ -37,6 +37,16 @@ const CreateAll = ({ state, setDatatakes, datatakes, setCreatedRequests, setReje
     setDatatakes,
   ]);
 
+  const validateIfSettingOutput = () => {
+    if (state.auth.isEdcUser || state.params.isSettingOutput) {
+      return Boolean(
+        (state.s1odc.advancedOptions.createCollection || state.s1odc.advancedOptions.collectionId) &&
+          state.s1odc.advancedOptions.defaultTilePath,
+      );
+    }
+    return true;
+  };
+
   return (
     <RequestButton
       buttonText="Create All"
@@ -44,9 +54,16 @@ const CreateAll = ({ state, setDatatakes, datatakes, setCreatedRequests, setReje
       request={createAll}
       className="secondary-button mr-2"
       title="This will create all requests associated with your order"
-      validation={validateAccountType(state.auth.user, state.auth.isEdcUser) && datatakes.length < 20}
+      validation={
+        validateAccountType(state.auth.user, state.auth.isEdcUser) &&
+        datatakes.length < 20 &&
+        validateIfSettingOutput()
+      }
       disabledTitle="Only CARD4L Requests with less than 20 datatakes can be confirmed."
       responseHandler={createAllResponseHandler}
+      errorHandler={(err) => {
+        store.dispatch(s1batchSlice.actions.setExtraInfo('Something went wrong, ' + err));
+      }}
     />
   );
 };

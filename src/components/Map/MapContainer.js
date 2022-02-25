@@ -269,7 +269,7 @@ const MapContainer = ({ geometry, selectedCrs, isOnDebugMode, extraGeometry = un
   };
 
   return (
-    <div className="aoi-container">
+    <div>
       <h2 className="heading-secondary">Area of interest</h2>
       <div className="form">
         <div className="mb-2 flex items-center w-52">

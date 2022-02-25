@@ -221,7 +221,7 @@ input:checked + .slider::before {
   margin-bottom: 2rem; }
   .request-form-first-row-first-item {
     display: flex;
-    width: 22%;
+    width: 17%;
     flex-direction: column; }
     @media (max-width: 62.5em) {
       .request-form-first-row-first-item {
@@ -229,12 +229,12 @@ input:checked + .slider::before {
   .request-form-first-row-second-item {
     display: flex;
     flex-direction: column;
-    width: 15%; }
+    width: 25%; }
     @media (max-width: 62.5em) {
       .request-form-first-row-second-item {
         width: 100%; } }
   .request-form-first-row-third-item {
-    width: 63%; }
+    width: 58%; }
     @media (max-width: 62.5em) {
       .request-form-first-row-third-item {
         width: 100%; } }
